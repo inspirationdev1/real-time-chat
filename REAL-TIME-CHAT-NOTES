@@ -16,6 +16,16 @@ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 npm i react-router-dom react-icons
 
 
+
+*******Git****************
+git init
+git add .
+git commit -m "Real Time "
+git remote add origin https://github.com/inspirationdev1/real-time-chat.git
+git branch -M main
+git push -u origin main
+**************************************
+
 ****Time to build Rest API****
 
 
