@@ -1,0 +1,22 @@
+*************Real-Time Chat******
+12+ Hour MERN Masterclass: Build and Deploy a Threads App with Real-Time Chat Functionality
+URL = https://www.youtube.com/watch?v=G4V4xO9wyD8&list=PLNEhktk_WNzpC3JnwmksayfVEK3qhFc6S&index=3
+
+
+https://github.com/burakorkmez/threads-clone
+
+*******************************
+
+npm create vite@latest .
+npm install
+npm run dev
+
+npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+
+npm i react-router-dom react-icons
+
+
+****Time to build Rest API****
+
+
+**************************
