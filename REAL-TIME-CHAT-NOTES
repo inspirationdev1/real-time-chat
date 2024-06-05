@@ -27,6 +27,19 @@ git push -u origin main
 **************************************
 
 ****Time to build Rest API****
+npm init -y
+npm install express jsonwebtoken bcryptjs dotenv mongoose cookie-parser
+npm install -D nodemon
+
+Username : inspirationdev1
+password : gdErQvsxvJMauxyZ
+
+npm install mongodb
+mongodb+srv://inspirationdev1:gdErQvsxvJMauxyZ@cluster0.06a9ykc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+
+http://localhost:5000/api/users/signup
+http://localhost:5000/api/users/login
 
 
+npm start dev
 **************************
