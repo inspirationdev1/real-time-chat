@@ -16,6 +16,8 @@ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 npm i react-router-dom react-icons
 
 
+npm i @chakra-ui/icons
+
 
 *******Git****************
 git init
@@ -41,5 +43,26 @@ http://localhost:5000/api/users/signup
 http://localhost:5000/api/users/login
 
 
-npm start dev
+npm run dev (fronend)
+npm start dev (back end)
+
+****Recoil is a state management library for React***
+npm install recoil
 **************************
+
+*****Upload images cloudinary.com****
+https://console.cloudinary.com/
+CLOUDINARY_CLOUD_NAME=da3dxqer8
+CLOUDINARY_API_KEY=266872412644417
+CLOUDINARY_API_SECRET=0nYP1iNcFUr2IoTaTvJUyPbeXLs
+
+cd backend
+npm install cloudinary
+**********************
+
+****Pending Task****
+1) Image size control in UpdateProfilePage.jsx
+********************
+
+cd frontend
+npm i date-fns
