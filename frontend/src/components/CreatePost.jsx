@@ -25,6 +25,7 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import userAtom from "../atoms/userAtom";
 import useShowToast from "../hooks/useShowToast";
 import postsAtom from "../atoms/postsAtom";
+import { useParams } from "react-router-dom";
 
 const MAX_CHAR = 500;
 
@@ -38,6 +39,8 @@ const CreatePost = () => {
   const showToast = useShowToast();
   const [loading, setLoading] = useState(false);
   const [posts, setPosts] = useRecoilState(postsAtom);
+  const { username } = useParams();
+  
 
   const handleTextChange = (e) => {
     const inputText = e.target.value;
@@ -52,7 +55,7 @@ const CreatePost = () => {
   };
 
   const handleCreatePost = async () => {
-    setLoading(true); 
+    setLoading(true);
     try {
       const res = await fetch("api/posts/create", {
         method: "POST",
@@ -71,16 +74,17 @@ const CreatePost = () => {
         return;
       }
       showToast("Success", "Post created successfully", "success");
-      
-      setPosts([data, ...posts]);
+      if (username === user.username) {
+        setPosts([data, ...posts]);
+      }
+
       onClose();
       setPostText("");
       setImgUrl("");
       setRemainingChar(MAX_CHAR);
     } catch (error) {
       showToast("Error", error, "error");
-    }
-    finally{
+    } finally {
       setLoading(false);
     }
   };
@@ -148,8 +152,12 @@ const CreatePost = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={handleCreatePost}
-            isLoading={loading}>
+            <Button
+              colorScheme="blue"
+              mr={3}
+              onClick={handleCreatePost}
+              isLoading={loading}
+            >
               Post
             </Button>
           </ModalFooter>
