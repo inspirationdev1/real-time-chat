@@ -66,3 +66,11 @@ npm install cloudinary
 
 cd frontend
 npm i date-fns
+
+****socket.io****
+cd backend
+npm i socket.io
+cd frontend
+npm i socket.io-client
+
+*****************

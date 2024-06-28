@@ -8,28 +8,22 @@ import useGetUserProfile from "../hooks/useGetUserProfile";
 import { useRecoilState } from "recoil";
 import postsAtom from "../atoms/postsAtom";
 const UserPage = () => {
-  const {user, loading}= useGetUserProfile();
+  const { user, loading } = useGetUserProfile();
   const { username } = useParams();
   const showToast = useShowToast();
   const [posts, setPosts] = useRecoilState(postsAtom);
   const [fetchingPosts, setFetchingPosts] = useState(true);
 
   useEffect(() => {
-    
-
     const getPosts = async () => {
+      if (!user) return;
       setFetchingPosts(true);
       try {
-        
         const res = await fetch(`/api/posts/user/${username}`);
         const data = await res.json();
-        
+
         console.log(data);
 
-        // if (data.error) {
-        //   showToast("Error", data.error, "error");
-        //   return;
-        // }
         setPosts(data);
       } catch (error) {
         showToast("Error", error.message, "error");
@@ -39,13 +33,9 @@ const UserPage = () => {
       }
     };
 
-    
     getPosts();
-  }, [username, showToast, setPosts]);
+  }, [username, showToast, setPosts, user]);
 
-  console.log("posts is here and it is recoil state", posts);
-  
-  
   if (!user && loading) {
     return (
       <Flex justifyContent={"center"}>
@@ -65,7 +55,6 @@ const UserPage = () => {
       )}
 
       {posts.map((post) => (
-        
         <Post key={post._id} post={post} postedBy={post.postedBy} />
       ))}
     </>
