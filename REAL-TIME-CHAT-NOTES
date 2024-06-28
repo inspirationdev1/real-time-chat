@@ -74,3 +74,9 @@ cd frontend
 npm i socket.io-client
 
 *****************
+
+*****Deployment*****
+npm install -g win-node-env
+
+********************
+
